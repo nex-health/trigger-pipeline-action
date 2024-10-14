@@ -2,41 +2,41 @@ name: 'Trigger Buildkite Pipeline'
 author: 'Buildkite'
 description: 'A GitHub Action for triggering a build on a Buildkite pipeline.'
 inputs:
-   buildkite_api_access_token:
-     description: 'Buildkite API Access Token'
-     required: true
-   pipeline:
-     description: 'The pipline to create a build on, in the format <org-slug>/<pipeline-slug>'
-     required: true
-   commit:
-     description: 'The commit SHA of the build'
-     required: false
-     default: HEAD
-   branch:
-     description: 'The branch of the build'
-     required: false
-   message:
-     description: 'The message for the build'
-     required: false
-   send_pull_request:
-     description: 'Whether to set PULL_REQUEST_ID, which sets BUILDKITE_PULL_REQUEST on the build. Does not work for cross-repo builds. Defaults to true'
-     required: false
-   pull_request_base_branch:
-     description: 'For a pull request build, the base branch of the pull request.'
-     required: false
-   build_env_vars:
-     description: 'Additional environment variables to set on the build, in JSON format'
-     required: false
-   build_meta_data:
-     description: 'Meta-data to set on the build, in JSON format'
-     required: false
-   ignore_pipeline_branch_filter:
-     description: 'Ignore pipeline branch filtering when creating a new build. true or false'
-     required: false
+  buildkite_api_access_token:
+    description: 'Buildkite API Access Token'
+    required: true
+  pipeline:
+    description: 'The pipline to create a build on, in the format <org-slug>/<pipeline-slug>'
+    required: true
+  commit:
+    description: 'The commit SHA of the build'
+    required: false
+    default: HEAD
+  branch:
+    description: 'The branch of the build'
+    required: false
+  message:
+    description: 'The message for the build'
+    required: false
+  send_pull_request:
+    description: 'Whether to set PULL_REQUEST_ID, which sets BUILDKITE_PULL_REQUEST on the build. Does not work for cross-repo builds. Defaults to true'
+    required: false
+  pull_request_base_branch:
+    description: 'For a pull request build, the base branch of the pull request.'
+    required: false
+  build_env_vars:
+    description: 'Additional environment variables to set on the build, in JSON format'
+    required: false
+  build_meta_data:
+    description: 'Meta-data to set on the build, in JSON format'
+    required: false
+  ignore_pipeline_branch_filter:
+    description: 'Ignore pipeline branch filtering when creating a new build. true or false'
+    required: false
 
 runs:
   using: 'docker'
-  image: 'Dockerfile'  
+  image: 'Dockerfile'
 branding:
   icon: 'send'
   color: 'green'
