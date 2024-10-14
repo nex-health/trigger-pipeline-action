@@ -9,9 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Verify that the Docker image for the action builds
-        run: docker build . --file Dockerfile      
- 
       - name: Run action with minimal parameters
         uses: ./
         with:

@@ -35,8 +35,10 @@ inputs:
     required: false
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: composite
+  steps:
+  - shell: bash
+    run: ./run.sh
 branding:
   icon: 'send'
   color: 'green'
